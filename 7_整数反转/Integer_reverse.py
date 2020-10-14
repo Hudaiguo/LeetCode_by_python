@@ -8,7 +8,7 @@
 #170 -> 71
 #123 -> 321
 #超过32位存储返回0
-#44ms 13.6M
+#44ms 13.6M -> 36ms 13.5M
 """
 
 class Solution:
@@ -33,5 +33,23 @@ class Solution:
         else:
             return 0
 
+    def reverse(self, x: int) -> int:
+        if x == 0:
+            return 0
+
+        x = str(x)
+        while x[-1] == "0":
+            x = x[:-1]
+        if x[0] == "-":
+            y = int(x[0] + x[1:][::-1])
+        else:
+            y =  int(x[::-1])
+
+        if -2**31-1 < y < 2**31:
+            return y
+        else:
+            return 0
+
+
 Integer = Solution()
-print(Integer.reverse(1534236469))
+print(Integer.reverse2(1534236469))
