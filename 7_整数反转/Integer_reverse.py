@@ -33,7 +33,7 @@ class Solution:
         else:
             return 0
 
-    def reverse(self, x: int) -> int:
+    def reverse2(self, x: int) -> int:
         if x == 0:
             return 0
 
